@@ -29,9 +29,9 @@ public class oe-hello-worldBot extends Bot {
     public void run() {
         // Repeat while the bot is running
         while (isRunning()) {
-            forward(100);
+            forward(150);
             turnGunRight(360);
-            back(100);
+            back(150);
             turnGunRight(360);
         }
     }
