@@ -1,27 +1,25 @@
 import dev.robocode.tankroyale.botapi.*;
-
-// ------------------------------------------------------------------
-// OE-Hello-World
-// ------------------------------------------------------------------
-// The first bot created by Keith D'Atrio
-// For the Zoom internal Robocode Battle Tank Royale
-// Overengineered Hello World Tank Bot
-// Foundation from the 'My First Bot' tutorial
-// ------------------------------------------------------------------
-
-import dev.robocode.tankroyale.botapi.*;
 import dev.robocode.tankroyale.botapi.events.*;
 
-public class oe-hello-worldBot extends Bot {
+// ------------------------------------------------------------------
+// MyFirstBot
+// ------------------------------------------------------------------
+// A sample bot original made for Robocode by Mathew Nelson.
+// Ported to Robocode Tank Royale by Flemming N. Larsen.
+//
+// Probably the first bot you will learn about.
+// Moves in a seesaw motion, and spins the gun around at each end.
+// ------------------------------------------------------------------
+public class MyFirstBot extends Bot {
 
     // The main method starts our bot
     public static void main(String[] args) {
-        new oe-hello-worldBot().start();
+        new MyFirstBot().start();
     }
 
     // Constructor, which loads the bot config file
-    oe-hello-worldBot() {
-        super(BotInfo.fromFile("oe-hello-world.json"));
+    MyFirstBot() {
+        super(BotInfo.fromFile("MyFirstBot.json"));
     }
 
     // Called when a new round is started -> initialize and do some movement
@@ -46,7 +44,7 @@ public class oe-hello-worldBot extends Bot {
     @Override
     public void onHitByBullet(HitByBulletEvent e) {
         // Calculate the bearing to the direction of the bullet
-        double bearing = calcBearing(e.getBullet().getDirection());
+        var bearing = calcBearing(e.getBullet().getDirection());
 
         // Turn 90 degrees to the bullet direction based on the bearing
         turnLeft(90 - bearing);
